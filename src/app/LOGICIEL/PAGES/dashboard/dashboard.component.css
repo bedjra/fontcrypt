@@ -1,0 +1,290 @@
+* Styles généraux */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* Évite le défilement horizontal */
+}
+
+.debut {
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    position: fixed;
+    /* Fixe l'en-tête en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Prend toute la largeur */
+    padding: 17px;
+    height: 45px;
+    /* Ajustez selon vos besoins pour la hauteur de l'en-tête */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    background-color: rgb(174, 178, 173);
+    z-index: 1000;
+    /* Place l'en-tête au-dessus des autres éléments */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+p {
+    color: black;
+    margin: 0;
+}
+
+span {
+    color: rgb(31, 31, 31);
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-details img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.profile-details .admin_name {
+    font-size: 16px;
+    color: #333;
+}
+
+.print-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.print-button:hover {
+    color: #007bff;
+}
+
+.print-button:active {
+    color: #007bff;
+}
+
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 0 0.3em;
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur principal */
+.interface {
+    display: flex;
+    height: 100vh;
+}
+
+
+.menu-icon {
+    display: none;
+}
+
+/* Layout principal */
+.layout {
+    height: 100vh;
+    display: block;
+    margin-top: 70px;
+}
+
+/* Navigation latérale */
+nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 170px;
+    height: calc(100vh - 70px);
+    background-color: rgb(174, 178, 173);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; 
+    }
+
+    .nav {
+        display: flex;
+        left: -100%; 
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav.open {
+        left: 0; 
+    }
+}
+
+
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+
+.routage {
+    margin-left: 180px;
+    margin-top: 50px;
+}
+
+
+.routage p {
+    display: none;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+
+    
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 40px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .dots {
+        margin-left: 10px;
+    }
+
+    .dots p {
+        display: none;
+
+    }
+
+    .profile-details img {
+        width: 30px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        height: 30px;
+        /* Réduit la taille de l'image */
+    }
+
+    .profile-details .admin_name {
+        display: none;
+    }
+
+    .profile-details {
+        margin-left: 265px;
+
+    }
+
+    .routage {
+        min-height: 100%;
+        margin-left: -30px;
+    }
+
+    .routage p {
+        padding-top: 5%;
+        display: block;
+        padding-left: 5%;
+        color: black;
+    }
+}
+
+
+
+.nav-links {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 15px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #160101;
+    transition: all 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 10px 0px;
+    display: flex;
+}
+
+
+.links_name {
+    margin-left: 15px;
+}
+
+.log_out {
+    position: absolute;
+    bottom: 2%;
+}
+
+.log_out span {
+    color: rgb(245, 59, 59);
+}
+
+.nav-links li {
+    padding-top: 15px;
+}
+
+
+
+
+
+.nav-links a.active span {
+    color: white;
+}   
+
+.nav-links a.active .icon {
+    filter: brightness(0) invert(1);
+}

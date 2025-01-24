@@ -1,0 +1,35 @@
+<section id="debut">
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shap"></div>
+  </div>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <h3>Page de Connexion</h3>
+
+    <!-- Champ Email -->
+    <label for="email">E-mail</label>
+    <input type="email" placeholder=" Entrez votre email" id="email" name="email" [(ngModel)]=" email" required />
+
+    <!-- Champ Password -->
+    <label for="password">Password</label>
+    <input type="password" placeholder="Entrez votre password" id="password" name="password" [(ngModel)]="password"
+      required />
+
+    <!-- Bouton Login -->
+    <div class="payerbutt">
+      <button type="submit" class="btn btn-primary custom-blue" [disabled]="!loginForm.valid">
+        Login
+      </button>
+    </div>
+
+    <!-- Section Social -->
+    <div class="social">
+      <div class="fbe">
+        <img src="../../../../../assets/Images/goog.png"  (click)="onGoogleLogin()" /> Google
+      </div>
+      <div class="fb">
+        <img src="../../../../../assets/Images/face.webp"  (click)="onFacebookLogin()" /> Facebook
+      </div>
+    </div>
+  </form>
+</section>
