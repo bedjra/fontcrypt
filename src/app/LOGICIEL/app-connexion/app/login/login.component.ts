@@ -9,11 +9,13 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  email: string = ''; // Ajoutez ces propriétés
-  password: string = '';
+  loginData = {
+    username: '',
+    password: ''
+  };
 
   onLogin() {
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    // Handle login logic
+    console.log('Login data:', this.loginData);
   }
 }

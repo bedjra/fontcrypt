@@ -1,0 +1,59 @@
+<div class="debut">
+    <div class="content" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <header class="header-container">
+            <img src="../../../../assets/Images/menu.png" height="50px" class="menu-icon" (click)="toggleNav()">
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <p>Admin <span>Logo</span></p>
+            </div>
+            <div class="profile-details" (click)="goToProfile()">
+                <span class="admin_name">
+                    Welcome <br>{{ nom }}
+                </span> &nbsp;
+                <img *ngIf="avatar" [src]="'data:image/png;base64,' + avatar" alt="Avatar" />
+            </div>
+        </header>
+    </div>
+
+    <!-- Menu Latéral -->
+    <nav>
+        <div class="nav" [class.open]="isNavOpen">
+            <div class="global">
+                <div class="sidebar">
+                    <!-----
+
+                    <ul class="nav-links">
+                        <li>
+                            <a [routerLink]="['/dashboard']" [class.active]="activeLink === 'dashboard'" (click)="setActive('dashboard')">
+                                <img src="../../../../assets/Images/dashboard.png" height="25px" class="icon">
+                                <span class="links_name">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/formulaire']" [class.active]="activeLink === 'formulaire'" (click)="setActive('formulaire')">
+                                <img src="../../../../assets/Images/exam.png" height="30px" class="icon">
+                                <span class="links_name">Formulaire</span>
+                            </a>
+                        </li>
+                        <li class="log_out">
+                            <a [routerLink]="['/']" [class.active]="activeLink === 'login'" (click)="setActive('login')">
+                                <i class="fas fa-sign-out-alt" height="50px"></i>
+                                <span class="links_name">Déconnexion</span>
+                            </a>
+                        </li>
+                    </ul>
+                    --->
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="content-area">
+        <div class="routage">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

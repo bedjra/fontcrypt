@@ -1,28 +1,23 @@
-<section id="debut">
-    <div class="background">
-      <div class="shape"></div>
-      <div class="shap"></div>
-    </div>
-    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-      <h3>Page de Connexion</h3>
-  
-      <!-- Champ Email -->
-      <label for="email">E-mail</label>
-      <input type="email" placeholder=" Entrez votre email" id="email" name="email" [(ngModel)]=" email" required />
-  
-      <!-- Champ Password -->
-      <label for="password">Password</label>
-      <input type="password" placeholder="Entrez votre password" id="password" name="password" [(ngModel)]="password"
-        required />
-  
-      <!-- Bouton Login -->
-      <div class="payerbutt">
-        <button type="submit" class="btn btn-primary custom-blue" [disabled]="!loginForm.valid">
-          Login
-        </button>
-      </div>
-  
-      <!-- Section Social -->
-      
-    </form>
-  </section>
+<div class="debut" >
+
+
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form #loginForm="ngForm">
+    <h3>Login Here</h3>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Email or Phone" [(ngModel)]="loginData.username"
+      required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="loginData.password"
+      required />
+
+    <button type="submit" [disabled]="!loginForm.valid" (click)="onLogin()">Log In</button>
+
+
+  </form>
+</div>
