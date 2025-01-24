@@ -1,44 +1,19 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; // Importer les interceptors
-import { JwtInterceptor } from '../service/JwtInterceptor'; // Votre intercepteur JWT
-import { Router } from '@angular/router'; // Ensure this line is correct
+import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule], // Ajouter HttpClientModule
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true } // Configurer l'intercepteur ici
-  ],
+  imports: [FormsModule, CommonModule], // Ajouter HttpClientModule
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  motDePasse: any;
-ident: any;
-  selectedDepot: string = '';
+  email: string = ''; // Ajoutez ces propriétés
+  password: string = '';
 
-  constructor(private router: Router) {}
-
- 
-  onSearch() {
-    // Logic for authentication goes here. 
-    // For example:
-    if (this.ident === 'user' && this.motDePasse === '12') {
-      // If login is successful, navigate to the 'accueil' route.
-      this.router.navigate(['/accueil']);
-    } else {
-      // Handle login failure (e.g., show an error message)
-      alert('Identifiant ou mot de passe incorrect');
-    }
+  onLogin() {
+    console.log('Email:', this.email);
+    console.log('Password:', this.password);
   }
-  passwordVisible = false;
-
-togglePasswordVisibility() {
-  this.passwordVisible = !this.passwordVisible;
 }
-
-}
-
